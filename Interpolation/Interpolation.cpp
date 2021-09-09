@@ -51,7 +51,7 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	int n;
-	double max, min, x, y;
+	double max, min, x, y, y_true;
 	cout << "Введите количество начальных точек: ";
 	cin >> n;
 	double* xi = new double[n];
@@ -78,6 +78,9 @@ int main()
 	
 	cout << "Y: " << y << "\n";
 
+	y_true = func(x);
+	cout << "Абсолютная погрешность " << (y_true - y) << "\n";
+	cout << "Относительная погрешность " << abs(y_true - y)/y_true << "\n";
 	system("pause");
 	return 0;
 }
